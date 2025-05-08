@@ -106,18 +106,32 @@ function App() {
           <>
             {comparisonIndicators.length > 0 && (
               <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-                <div className="flex justify-between items-center">
-                  <div>
+                <div className="space-y-4">
+                  <div className='flex justify-between items-center flex-wrap gap-2'>
                     <h2 className="text-lg font-semibold text-gray-800 mb-2">Comparar Indicadores</h2>
-                    <div className="flex flex-wrap gap-2">
+                    
+                    <button
+                      className={`px-4 py-2 rounded font-semibold text-white ${
+                        comparisonIndicators.length >= 2
+                          ? 'bg-blue-600 hover:bg-blue-700'
+                          : 'bg-gray-400 cursor-not-allowed'
+                      }`}
+                      onClick={startComparison}
+                      disabled={comparisonIndicators.length < 2}
+                    >
+                      Comparar
+                    </button>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
                       {comparisonIndicators.map((indicator) => (
                         <div 
                           key={indicator.code}
-                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full flex items-center"
+                          className="bg-blue-100 text-blue-800 px-3 py-2 rounded-lg flex items-center"
                         >
                           <span>{indicator.name}</span>
                           <button 
-                            className="ml-2 text-blue-600 hover:text-blue-800"
+                            className="ml-2 text-sm px-3 py-1 text-white"
                             onClick={() => handleIndicatorCompare(indicator.code, indicator.name)}
                           >
                             ×
@@ -125,18 +139,6 @@ function App() {
                         </div>
                       ))}
                     </div>
-                  </div>
-                  <button
-                    className={`px-4 py-2 rounded font-semibold text-white ${
-                      comparisonIndicators.length >= 2
-                        ? 'bg-blue-600 hover:bg-blue-700'
-                        : 'bg-gray-400 cursor-not-allowed'
-                    }`}
-                    onClick={startComparison}
-                    disabled={comparisonIndicators.length < 2}
-                  >
-                    Comparar
-                  </button>
                 </div>
               </div>
             )}

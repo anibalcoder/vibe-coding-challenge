@@ -114,7 +114,7 @@ const IndicatorComparison: React.FC<IndicatorComparisonProps> = ({
             id="year-select"
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="block text-black w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           >
             {years.map((year) => (
               <option key={year} value={year}>
@@ -161,7 +161,8 @@ const IndicatorComparison: React.FC<IndicatorComparisonProps> = ({
                   angle={-45} 
                   textAnchor="end" 
                   height={70}
-                  interval={Math.max(0, Math.floor(data.length / 15))}
+                  // interval={Math.max(0, Math.floor(data.length / 15))}
+                  interval="preserveStartEnd"
                   tick={{ fontSize: 12 }}
                 />
                 <YAxis />

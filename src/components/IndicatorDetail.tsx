@@ -42,7 +42,7 @@ const IndicatorDetail: React.FC<IndicatorDetailProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-lg md:rounded-2xl shadow-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">{indicatorName}</h2>
           <button 
@@ -63,7 +63,7 @@ const IndicatorDetail: React.FC<IndicatorDetailProps> = ({
             id="year-select"
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full px-3 py-2 border border-gray-300 text-black rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           >
             {years.map((year) => (
               <option key={year} value={year}>

@@ -33,7 +33,7 @@ const IndicatorChart: React.FC<IndicatorChartProps> = ({
     }));
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
+    <div className="bg-white rounded-lg shadow-md">
       <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
@@ -47,7 +47,8 @@ const IndicatorChart: React.FC<IndicatorChartProps> = ({
               angle={-45}
               textAnchor="end"
               height={70}
-              interval={0}
+              // interval={0}
+              interval="preserveStartEnd"
               tick={{ fontSize: 12 }}
             />
             <YAxis 
